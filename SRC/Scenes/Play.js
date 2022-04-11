@@ -70,6 +70,10 @@ class Play extends Phaser.Scene {
     }
     
     update() {
+          // check key input for restart
+        if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
+        this.scene.restart();
+        }
         this.starfield.tilePositionX -= 4;
         if (!this.gameOver) {               
             this.p1Rocket.update();         // update rocket sprite
